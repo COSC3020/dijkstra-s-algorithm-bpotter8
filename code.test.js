@@ -13,4 +13,4 @@ const testGraph = {
 };
 
 // Unit testing
-assert.deepEqual(dijkstra(testGraph, 'A'), [ A: 0, B: 2, C: 6, D: 5, E: 7 ]);
+assert.deepStrictEqual(dijkstra(testGraph, 'A'), [{ A: 0 }, { B: 2 }, { C: 6 }, { D: 5 }, { E: 7 }]);
