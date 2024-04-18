@@ -24,3 +24,9 @@ inefficient.
 
 What is the big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+Answer:
+
+The worst case runtime for this implementation is $\Theta (V^2)$ where $V$ is the amount of vertices in the graph.
+
+To start, the algorithm fills 'length' with the distances to all nodes which takes $V$ time. Then, the algorithm runs until all nodes in the graph are visited and this also takes $V$ time. So in the worst case scenario, the algorithm has to fill 'length' with all distances and it also has to visit all nodes which would have a total runtime of $\Theta (V^2)$.
