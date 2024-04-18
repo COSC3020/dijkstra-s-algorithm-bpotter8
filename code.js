@@ -1,5 +1,5 @@
 function dijkstra(graph, sourceNode) {
-    var length = [];
+    var length = {};
     var visited = [];
     var nodes = Object.keys(graph);
 
