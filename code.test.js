@@ -1,0 +1,20 @@
+const fs = require('fs');
+const jsc = require('jsverify');
+const assert = require('assert');
+
+eval(fs.readFileSync('code.js')+'');
+
+const testGraph = {
+  A: { B: 2 },
+  B: { A: 2, C: 4, D: 3 },
+  C: { B: 4, D: 2, E: 1 },
+  D: { B: 3, C: 2, E: 2 },
+  E: { C: 1, D: 2 }
+};
+
+// Unit testing
+assert.deepStrictEqual(dijkstra(testGraph, 'A'), { A: 0, B: 2, C: 6, D: 5, E: 7 }); 
+assert.deepStrictEqual(dijkstra(testGraph, 'B'), { A: 2, B: 0, C: 4, D: 3, E: 5 }); 
+assert.deepStrictEqual(dijkstra(testGraph, 'C'), { A: 6, B: 4, C: 0, D: 2, E: 1 }); 
+assert.deepStrictEqual(dijkstra(testGraph, 'D'), { A: 5, B: 3, C: 2, D: 0, E: 2 }); 
+assert.deepStrictEqual(dijkstra(testGraph, 'E'), { A: 7, B: 5, C: 1, D: 2, E: 0 }); 
